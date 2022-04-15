@@ -10,9 +10,7 @@
     });
     
     let url = params.url || "http://localhost/";
-    setTimeout(function() {
-      window.location.href = url + window.location.hash;
-    }, 10000);
+    window.location.href = url + window.location.hash;
   </script>
 </body>
 </html>
