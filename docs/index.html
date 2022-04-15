@@ -5,8 +5,14 @@
 </head>
 <body>
   <script>
-    let url = getParameterByName("url") || "http://localhost/";
-    window.location.href = url + "#" + window.location.hash;
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    
+    let url = params.url || "http://localhost/";
+    setTimeout(function() {
+      window.location.href = url + "#" + window.location.hash;
+    }, 10000);
   </script>
 </body>
 </html>
