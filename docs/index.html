@@ -5,7 +5,8 @@
 </head>
 <body>
   <script>
-    window.location.href = 'http://localhost/';
+    let url = getParameterByName("url") || "http://localhost/";
+    window.location.href = url + "#" + window.location.hash;
   </script>
 </body>
 </html>
